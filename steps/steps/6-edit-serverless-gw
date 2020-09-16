@@ -1,0 +1,44 @@
+# Теперь уже можно удостовериться в том, что ссылки сокращаются корректно, для этого редактируем наш api gateway, добавив в него несколько новых путей.
+Теперь он выглядит так:
+
+openapi: 3.0.0
+info:
+  title: URL Shortener
+  version: 1.0.0
+servers:
+- url: # не трогаем, оставляем, как было
+paths:
+  /:
+    get:
+      x-yc-apigateway-integration:
+        type: object-storage
+        bucket: название бакета
+        object: index.html
+        presigned_redirect: false
+        service_account: id сервисного аккаунта
+      operationId: static
+  /shorten:
+    post:
+      x-yc-apigateway-integration:
+        type: cloud-functions
+        function_id: id вашей функции
+      operationId: shorten
+  /{id}:
+    get:
+      x-yc-apigateway-integration:
+        type: cloud-functions
+        function_id: id вашей функции
+      operationId: redirect
+      parameters:
+      - description: id of the url
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+        
+        
+# Проверка
+Теперь переходим по адресу шлюза, вводим какую нибудь ссылку в поле для ввода и нажимаем сократить. Должна появиться сокращенная ссылка. 
