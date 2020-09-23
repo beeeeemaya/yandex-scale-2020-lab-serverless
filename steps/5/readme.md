@@ -8,7 +8,7 @@
     
 ## Редактируем api gw   
 
-Код в файлике gw.yml  https://github.com/beeeeemaya/yandex-scale-2020-lab-serverless/blob/master/steps/5/gw.yml
+Код в файлике gw.yaml  https://github.com/beeeeemaya/yandex-scale-2020-lab-serverless/blob/master/steps/5/gw.yaml
 Пока что нет подключения к базе данных и работы с ней, вместо этого стоят TODO. 
 Но уже можно удостовериться в том, что ссылки сокращаются корректно, для этого редактируем наш api-шлюз, добавив в него несколько новых путей. 
 

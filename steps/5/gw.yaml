@@ -8,22 +8,22 @@ paths:
   /:
     get:
       x-yc-apigateway-integration:
-        type: object-storage
+        type: object_storage
         bucket: название бакета
         object: index.html
         presigned_redirect: false
-        service_account: id сервисного аккаунта
+        service_account_id: id сервисного аккаунта
       operationId: static
   /shorten:
     post:
       x-yc-apigateway-integration:
-        type: cloud-functions
+        type: cloud_functions
         function_id: id вашей функции
       operationId: shorten
   /r/{id}:
     get:
       x-yc-apigateway-integration:
-        type: cloud-functions
+        type: cloud_functions
         function_id: id вашей функции
       operationId: redirect
       parameters:
