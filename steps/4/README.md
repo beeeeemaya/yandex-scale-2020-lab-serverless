@@ -1,4 +1,6 @@
-# Cоздаем шлюз api gateway: url-shortener-gw
+# Cоздаем шлюз API Gateway
+
+Название: url-shortener-gw
 
 Код: в приложенном файле шага.
 
