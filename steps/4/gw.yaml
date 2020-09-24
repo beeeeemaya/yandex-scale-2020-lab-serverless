@@ -7,8 +7,8 @@ paths:
     get:
       x-yc-apigateway-integration:
         type: object_storage
-        bucket: название бакета !!!
-        object: название html-файла !!!
+        bucket:             <bucket_name>        # <-- название бакета
+        object:             <html_file>          # <-- название html-файла
         presigned_redirect: false
-        service_account_id: id сервисного аккаунта !!!
+        service_account:    <service_account_id> # <-- ID сервисного аккаунта
       operationId: static
