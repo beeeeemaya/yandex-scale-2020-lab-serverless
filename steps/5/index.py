@@ -36,8 +36,6 @@ def shorten(event):
     return response(400, {}, False, 'В теле запроса отсутствует параметр url')
 
 
-# эти проверки нужны, поскольку функция у нас одна
-# в идеале сделать по функции на каждый путь в api-gw
 def get_result(url, event):
     if url == "/shorten":
         return shorten(event)
