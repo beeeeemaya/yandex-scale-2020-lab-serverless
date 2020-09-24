@@ -9,22 +9,22 @@ paths:
     get:
       x-yc-apigateway-integration:
         type: object_storage
-        bucket: название бакета
-        object: index.html
+        bucket:             <bucket_name>        # <-- название бакета
+        object:             <html_file>          # <-- название html-файла
         presigned_redirect: false
-        service_account_id: id сервисного аккаунта
+        service_account:    <service_account_id> # <-- ID сервисного аккаунта
       operationId: static
   /shorten:
     post:
       x-yc-apigateway-integration:
         type: cloud_functions
-        function_id: id вашей функции
+        function_id:  <function_id>               # <-- ID функции
       operationId: shorten
   /r/{id}:
     get:
       x-yc-apigateway-integration:
         type: cloud_functions
-        function_id: id вашей функции
+        function_id:  <function_id>               # <-- ID функции
       operationId: redirect
       parameters:
       - description: id of the url
