@@ -1,4 +1,4 @@
-# Возвращаемся к фукнции-сокращателю. 
+# Возвращаемся к функции-сокращателю
 
 ## Правим код функции index.py 
 https://github.com/beeeeemaya/yandex-scale-2020-lab-serverless/blob/master/steps/7/index.py
